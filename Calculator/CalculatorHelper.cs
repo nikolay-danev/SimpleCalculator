@@ -9,6 +9,16 @@
         /// <param name="operatorsStack"></param>
         public void Evaluate(Stack<double> numbersStack, Stack<char> operatorsStack)
         {
+
+            if(operatorsStack.Count == 0)
+            {
+                throw new ArgumentException("Invalid operators");
+            }
+            if(numbersStack.Count == 0)
+            {
+                throw new ArgumentException($"Empty numbers stack {numbersStack.Count}.");
+            }
+
             char @operator = operatorsStack.Pop();
             double number2 = numbersStack.Pop();
             double number1 = numbersStack.Pop();
